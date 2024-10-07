@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Games Remade</title>
+    <style>
+        html, body {
+            height: 100%;
+            margin: 0;
+        }
+        body {
+            display: flex;
+            flex-direction: column;
+            font-family: 'Arial', sans-serif;
+            background-color: #1a1a1a;
+            color: #ffffff;
+            text-align: center;
+        }
+        header {
+            background-color: #333;
+            padding: 20px 0;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+            position: relative; /* For positioning buttons and text */
+        }
+        h1 {
+            font-size: 2.5em;
+            margin: 0;
+        }
+        nav {
+            margin: 20px 0;
+        }
+        nav a {
+            color: #ffffff;
+            text-decoration: underline;
+            margin: 0 15px;
+            font-size: 1.2em;
+        }
+        nav a:hover {
+            color: #008CBA; /* Change color on hover */
+        }
+        .top-buttons {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            display: flex; /* Use flexbox for alignment */
+            align-items: center; /* Center items vertically */
+        }
+        .button {
+            display: inline-block;
+            background-color: #444;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            text-decoration: none; /* Remove underline */
+            margin: 5px;
+            font-size: 1em;
+            transition: background-color 0.3s;
+        }
+        .button:hover {
+            background-color: #555;
+        }
+        .account-info {
+            color: #ffffff;
+            font-size: 1em; /* Smaller font size for the account info */
+            margin-right: 10px; /* Space between text and buttons */
+        }
+        .content {
+            flex: 1;
+            padding: 40px 20px;
+        }
+        footer {
+            padding: 20px 0;
+            background-color: #333;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Games Remade</h1>
+        <nav>
+            <a href="other-projects.html">Other Projects</a>
+            <a href="privacy-policy.html">Privacy Policy</a>
+            <div class="top-buttons">
+                <span class="account-info" id="accountInfo">Account: N/A</span>
+                <a href="sign-up-page.html" class="button">Sign Up</a>
+                <a href="login.html" class="button">Login</a>
+            </div>
+        </nav>
+    </header>
+    <div class="content">
+        <!-- Content will be added here later -->
+    </div>
+    <footer>
+        <p>&copy; 2024 Games Remade. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Check if there's a logged-in user and update the account info
+        const accountInfo = document.getElementById('accountInfo');
+        const loggedInUser = localStorage.getItem('loggedInUser');
+
+        if (loggedInUser) {
+            const { email } = JSON.parse(loggedInUser);
+            accountInfo.innerText = `Account: ${email}`;
+        }
+    </script>
+</body>
+</html>
